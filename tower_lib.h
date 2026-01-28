@@ -24,7 +24,7 @@
     #define PLAYER_START_COINS 100
     // TimeScale
     #define STANDART_TIME_SCALE 1.0f
-    #define FAST_TIME_SCALE 2.0f
+    #define FAST_TIME_SCALE 3.0f
     // Enemy
     #define NUM_OF_ENEMY_TYPES 4
     // Tower
@@ -401,8 +401,13 @@ void HandleWaves(App *self) {
     GameAssets *assets = &(*self).assets;
 
 
+    if((*game).is_speed_up_active){
+        current_time = current_time * 3;
+    }
+
+
     if((*game).current_wave > 15){
-        (*self).current_game_state = GAME_STATE_END;
+        (*self).current_game_state = GAME_STATE_WIN;
         return;
     }
 
@@ -436,8 +441,8 @@ void HandleWaves(App *self) {
         
 
             // Zrychlíme interval (nepřátelé chodí častěji), min 500ms
-        (*game).spawn_interval = 1500 - ((*game).current_wave * 50);
-        if((*game).spawn_interval < 500) (*game).spawn_interval = 500;
+        (*game).spawn_interval = 1500 - ((*game).current_wave * 70);
+        if((*game).spawn_interval < 355) (*game).spawn_interval = 355;
     }
 }
 
