@@ -21,7 +21,7 @@ Vykreslování zajišťuje funkce RenderGame, která postupně volá SDL_RenderC
 
 Při ukončení hry, ať už restartem (ResetGame) nebo vypnutím, se volá funkce CleanupAssets. Ta je kritická pro správu paměti: postupně prochází spojové seznamy nepřátel a věží a pro každý prvek volá free, aby nedošlo k úniku paměti (Memory Leak). Následně pomocí SDL funkcí (SDL_DestroyTexture, Mix_FreeMusic) uvolní veškeré grafické a zvukové prostředky. Nakonec funkce SaveGame porovná aktuální vlnu s uloženým rekordem a v případě zlepšení soubor přepíše.
 
-# INSTALACE
+## INSTALACE
 
 Pro kompilaci a spuštění hry je potřeba mít nainstalované několik knihoven a souborů
 
