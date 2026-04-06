@@ -1,15 +1,13 @@
+# TOWER DEFENCE
 Školní projekt do předmětu UPR
-TOWER DEFENCE
 
+## FUNKCIONALITA
 
-**FUNKCIONALITA**
-
-Z důvodu, že na linuxu fedora 43 jsou poškozené SDL2 knihovny, tak se hra musela vyvájet ve windows na WSL Ubuntu.
-Pokud cokoliv z tohoto důvodu na Linucu nepojede tak se dopředu omlouvám.
-Hra je dělaná na pevné rozlišení HD neboli 1280x720 a tudíž změna velikosti či maximalizace může rozbít grafiku hry, ačkoliv by tato funkce neměla být povolena tak to není potřeba zkoušet
-Hra má taktéž nějaké klávesové zkratky které je dobré znát:
-  Klávesa "ESC" - ihned ukončí hru
-  Klávesa "m" - minimalizuje okno hry
+- Hra je dělaná na pevné rozlišení HD neboli 1280x720 a tudíž změna velikosti či maximalizace může rozbít grafiku hry, ačkoliv by tato funkce neměla být povolena tak - to není potřeba zkoušet.
+- Hra má taktéž nějaké klávesové zkratky které je dobré znát:
+  - Klávesa "ESC" - ihned ukončí hru
+  - Klávesa "m" - minimalizuje okno hry
+- Hra obsahuje 4 typy enemy, několik růzdných menu, speed-scale systém a update systém a taky win screen.
 
 Jak daná hra funguje:
 
@@ -23,10 +21,7 @@ Vykreslování zajišťuje funkce RenderGame, která postupně volá SDL_RenderC
 
 Při ukončení hry, ať už restartem (ResetGame) nebo vypnutím, se volá funkce CleanupAssets. Ta je kritická pro správu paměti: postupně prochází spojové seznamy nepřátel a věží a pro každý prvek volá free, aby nedošlo k úniku paměti (Memory Leak). Následně pomocí SDL funkcí (SDL_DestroyTexture, Mix_FreeMusic) uvolní veškeré grafické a zvukové prostředky. Nakonec funkce SaveGame porovná aktuální vlnu s uloženým rekordem a v případě zlepšení soubor přepíše.
 
-
-
-
-**INSTALACE**
+# INSTALACE
 
 Pro kompilaci a spuštění hry je potřeba mít nainstalované několik knihoven a souborů
 
@@ -46,5 +41,5 @@ Tento příkaz kompiluje hru do názvu: TowerDefenseGame
 Spuštění hry
 
   Spuštění hry na WSL ve windows 11 je potřeba poté do terminálu nahrát tento příkaz: export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
-  Poté stačí hru spustit příkazem: ./TowerDefenseGame 2>&1 | grep "tower_lib.h"
+  Poté stačí hru spustit příkazem: ./TowerDefenseGame"
   Pokud spuštění bude mít problém s audiem tak bude pořeba hru spustit příkazem: SDL_AUDIODRIVER=pulseaudio ./TowerDefenseGame 2>&1 | grep "tower_lib.h"
