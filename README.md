@@ -42,4 +42,4 @@ Tento příkaz kompiluje hru do názvu: `TowerDefenseGame`
 
   Spuštění hry na WSL ve windows 11 je potřeba poté do terminálu nahrát tento příkaz: `export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0` \
   Poté stačí hru spustit příkazem: `./TowerDefenseGame` \
-  Pokud spuštění bude mít problém s audiem tak bude pořeba hru spustit příkazem: `SDL_AUDIODRIVER=pulseaudio ./TowerDefenseGame 2>&1 | grep "tower_lib.h"` \
+  Pokud spuštění bude mít problém s audiem tak bude pořeba hru spustit příkazem: `SDL_AUDIODRIVER=pulseaudio ./TowerDefenseGame 2>&1 | grep "tower_lib.h"` 
