@@ -5,8 +5,8 @@
 
 - Hra je dělaná na pevné rozlišení HD neboli 1280x720 a tudíž změna velikosti či maximalizace může rozbít grafiku hry, ačkoliv by tato funkce neměla být povolena tak - to není potřeba zkoušet.
 - Hra má taktéž nějaké klávesové zkratky které je dobré znát:
-  - Klávesa "ESC" - ihned ukončí hru
-  - Klávesa "m" - minimalizuje okno hry
+  - Klávesa `ESC` - ihned ukončí hru
+  - Klávesa `m` - minimalizuje okno hry
 - Hra obsahuje 4 typy enemy, několik růzdných menu, speed-scale systém a update systém a taky win screen.
 
 Jak daná hra funguje:
@@ -26,20 +26,20 @@ Při ukončení hry, ať už restartem (ResetGame) nebo vypnutím, se volá funk
 Pro kompilaci a spuštění hry je potřeba mít nainstalované několik knihoven a souborů
 
   1. GCC kompilátor pomocí, kterého se daná hra kompiluje
-  2. MakeFile aby bylo možné spustit příkaz "make"
-  3. Potřebné knihovny na SDL2 a to: SDL2/SDL.h ,SDL2/SDL_image.h, SDL2/SDL_ttf.h, SDL2/SDL_mixer.h
+  2. MakeFile aby bylo možné spustit příkaz `make`
+  3. Potřebné knihovny na SDL2 a to: `SDL2/SDL.h ,SDL2/SDL_image.h, SDL2/SDL_ttf.h, SDL2/SDL_mixer.h`
 
-Příkazy pro Ubuntu:
-  sudo apt update
-  Instalace GCC: sudo apt install gcc-14 g++-14
-  Instalace MakeFile: sudo apt install make
-  Instalace SDL2 Knihoven: sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-mixer-dev
+### Příkazy pro Ubuntu:
+  `sudo apt update` \
+  Instalace GCC: `sudo apt install gcc-14 g++-14` \
+  Instalace MakeFile: `sudo apt install make` \
+  Instalace SDL2 Knihoven: `sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-mixer-dev` \
 
 Pokud jsou všechny potřebné knihovny nainstalovány tak by mělo stačit do terminálu napsat příkaz: make
-Tento příkaz kompiluje hru do názvu: TowerDefenseGame
+Tento příkaz kompiluje hru do názvu: `TowerDefenseGame`
 
 ## Spuštění hry
 
-  Spuštění hry na WSL ve windows 11 je potřeba poté do terminálu nahrát tento příkaz: export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
-  Poté stačí hru spustit příkazem: ./TowerDefenseGame"
-  Pokud spuštění bude mít problém s audiem tak bude pořeba hru spustit příkazem: SDL_AUDIODRIVER=pulseaudio ./TowerDefenseGame 2>&1 | grep "tower_lib.h"
+  Spuštění hry na WSL ve windows 11 je potřeba poté do terminálu nahrát tento příkaz: `export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0` \
+  Poté stačí hru spustit příkazem: `./TowerDefenseGame` \
+  Pokud spuštění bude mít problém s audiem tak bude pořeba hru spustit příkazem: `SDL_AUDIODRIVER=pulseaudio ./TowerDefenseGame 2>&1 | grep "tower_lib.h"` \
