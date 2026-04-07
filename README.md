@@ -9,7 +9,7 @@
   - Klávesa `m` - minimalizuje okno hry
 - Hra obsahuje 4 typy enemy, několik růzdných menu, speed-scale systém a update systém a taky win screen.
 
-Jak daná hra funguje:
+## Jak daná hra funguje
 
 Celý projekt je strukturován do dvou klíčových souborů, kde main.c funguje jako spouštěcí bod a tower_lib.h jako obsáhlá knihovna definující veškerou logiku, datové struktury a konstanty. Program začíná ve funkci main, která nejprve vynuluje paměť pro hlavní strukturu App pomocí memset a zavolá funkci AppStartEndFunc. Tato funkce inicializuje grafické rozhraní SDL2, vytvoří okno uprostřed obrazovky o rozměrech 1280x720 a inicializuje renderovací jádro s akcelerací. Následuje volání funkce LoadSave, která ověří existenci souboru "game.save" pomocí pomocné funkce FileExist, a pokud neexistuje, vytvoří jej; následně z něj načte nejvyšší dosažené skóre (Wave). Klíčovým krokem je volání funkce LoadAssets, která zavádí do paměti externí soubory: inicializuje písma (TTF), audio (Mixer) a obrázky (IMG). Tato funkce postupně načítá textury pro menu, mapu, tlačítka a všechny typy nepřátel, přičemž každé načtení je jištěno kontrolou existence souboru. Pokud je vše úspěšné, spustí se BackgroundMusic pro přehrávání hudební smyčky.
 
