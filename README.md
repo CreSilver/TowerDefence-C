@@ -38,7 +38,7 @@ Příkazy pro Ubuntu:
 Pokud jsou všechny potřebné knihovny nainstalovány tak by mělo stačit do terminálu napsat příkaz: make
 Tento příkaz kompiluje hru do názvu: TowerDefenseGame
 
-Spuštění hry
+## Spuštění hry
 
   Spuštění hry na WSL ve windows 11 je potřeba poté do terminálu nahrát tento příkaz: export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
   Poté stačí hru spustit příkazem: ./TowerDefenseGame"
